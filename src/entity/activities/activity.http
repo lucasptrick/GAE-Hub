@@ -1,0 +1,36 @@
+### > Create Activities
+POST http://localhost:3000/activities
+Content-Type: application/json
+
+{
+  "categoriaAtividade": "Eventos",
+  "atividadeRealizada": "Palestra sobre IA",
+  "cargaHoraria": 5,
+  "semestre": 2024.1,
+  "certificadoURL": "https://certificado.com/meucertificado"
+}
+
+
+### > Get Activity
+GET http://localhost:3000/activities/1
+
+
+
+### > List Activities
+GET http://localhost:3000/activities
+
+
+
+### > Update Activity
+PATCH  http://localhost:3000/activities/1
+Content-Type: application/json
+
+{
+  "categoriaAtividade": "Palestra"
+
+}
+
+
+
+### > Delete Activity
+DELETE http://localhost:3000/activities/1

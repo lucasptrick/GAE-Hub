@@ -1,0 +1,34 @@
+### > Create Student
+POST http://localhost:3000/student
+Content-Type: application/json
+
+{
+  "email": "test3@email.com",
+  "password": "Test@123",
+  "nome": "User Third Test",
+  "matricula": "20222ADS-PM0012"
+}
+
+
+### > Get Student
+GET http://localhost:3000/student/test3@email.com
+
+
+
+### > List Students
+GET http://localhost:3000/student
+
+
+
+### > Update Student
+PATCH  http://localhost:3000/student/lpro@email.com
+Content-Type: application/json
+
+{
+  "nome": "Lucas Patrick"
+}
+
+
+
+### > Delete Student
+DELETE http://localhost:3000/student/test2@email.com
