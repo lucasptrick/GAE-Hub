@@ -19,7 +19,7 @@ export class CreateStudentDto {
     
     @IsString()
     @MinLength(4)
-    @MaxLength(8)
+    @MaxLength(10)
     @Matches(/((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/, {
         message: 'password too weak',
     })

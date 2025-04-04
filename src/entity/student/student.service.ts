@@ -34,11 +34,19 @@ export class StudentService {
     return students.map(({ password, ...student }) => student);
   }
 
+  // Busca de estudante sem expor o e-mail
   async findByEmail(email: string) {
     const student = await this.repository.findOneBy({ email });
     if (!student) return null;
     const { password, ...result } = student;
     return result;
+  }
+  // Busca para Autenticação(Comparando a Senha)
+  async findByEmailWithPassword(email: string) {
+    return this.repository.findOne({
+      where: { email },
+      select: ['id', 'email', 'nome', 'matricula', 'password'], // Incluímos o password aqui
+    });
   }
   
 

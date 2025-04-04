@@ -3,10 +3,10 @@ POST http://localhost:3000/student
 Content-Type: application/json
 
 {
-  "email": "test3@email.com",
-  "password": "Test@123",
-  "nome": "User Third Test",
-  "matricula": "20222ADS-PM0012"
+  "email": "lucas@email.com",
+  "password": "@Lucas998",
+  "nome": "Lucas Test",
+  "matricula": "20222ADS-PM0123"
 }
 
 
