@@ -1,6 +1,7 @@
-import { Controller, HttpCode, HttpStatus, Post, UseGuards } from '@nestjs/common';
+import { Controller, HttpCode, HttpStatus, Post, Request, UnauthorizedException, UseGuards } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LocalAuthGuard } from './guards/local-auth.guard';
+import { AuthRequest } from './models/AuthRequest'
 
 @Controller()
 export class AuthController {
@@ -9,10 +10,11 @@ export class AuthController {
     @Post("login")
     @HttpCode(HttpStatus.OK)
     @UseGuards(LocalAuthGuard)
-    login() {
-        return 'Vc está logado!'
-        // return this.authService.login();
+    login(@Request() req: AuthRequest) {
+        if (!req.user) {
+            throw new UnauthorizedException('Usuário não autenticado');
+          }
+
+          return this.authService.login(req.user);
     }
-
-
 }
