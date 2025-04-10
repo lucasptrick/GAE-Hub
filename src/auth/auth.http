@@ -5,3 +5,7 @@ Content-Type: application/json
   "email": "lucas@email.com",
   "password": "@Lucas998"
 }
+
+
+### Hello Word
+GET http://localhost:3000/
