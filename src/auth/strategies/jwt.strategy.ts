@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { ExtractJwt, Strategy } from 'passport-jwt';
-import { StudentFromJwt } from '../models/StudentFromJwt'; //StudentFromJwt
-import { StudentPayload } from '../models/StudentPayload'; //StudentPayload
+import { StudentFromJwt } from '../models/StudentFromJwt'; 
+import { StudentPayload } from '../models/StudentPayload'; 
 
 @Injectable()
 export class JwtStrategy extends PassportStrategy(Strategy) {
@@ -10,7 +10,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: 'chave_super_secreta',
+      secretOrKey: 'acesso_gae_hub',
     });
   }
 

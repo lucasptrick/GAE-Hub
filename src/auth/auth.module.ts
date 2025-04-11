@@ -9,7 +9,7 @@ import { LoginValidationMiddleware } from './middlewares/login-validation.middle
 
 @Module({
   imports: [StudentModule, JwtModule.register({
-    secret: 'chave_super_secreta',
+    secret: 'acesso_gae_hub',
     signOptions: { expiresIn: '30d' },
   })],
   controllers: [AuthController],
